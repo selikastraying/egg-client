@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Counter } from './components/counter.jsx'
 
 function Square() {
   return <button className="square"></button>
@@ -28,6 +29,7 @@ function App() {
           you click {count} times
         </button>
         <Square></Square>
+        <Counter></Counter>
       </header>
     </div>
   );
