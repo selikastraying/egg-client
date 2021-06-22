@@ -20,7 +20,7 @@ function Post(props) {
                   <Card.Text>
                     <input name="content" type="text" placeholder="enter Content" defaultValue={props.post.content} onChange={handleOnChange} className="w-100 mr-3"></input>
                   </Card.Text>
-                  <Button className="mr-3" onClick={() => {props.handleUpdate(props.post._id, newPost.title, newPost.content);setIsUpdating(!isUpdating);}}>確定</Button>
+                  <Button className="mr-3" onClick={() => {props.handleUpdate(props.post._id, newPost.title, newPost.content);setIsUpdating(!isUpdating);}} disabled={newPost.title === '' || newPost.content === ''}>確定</Button>
                   <Button onClick={() => setIsUpdating(!isUpdating)}>取消</Button>
                 </Card.Body>
               </Card>

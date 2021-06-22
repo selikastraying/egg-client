@@ -7,19 +7,23 @@ function NewPost(props) {
       const { name, value } = event.target;
       setNewPost({ ...newPost, [name]: value });
     };
+    const handleOnSubmit = () => {
+      props.handleInsert(newPost.title, newPost.content)
+      setNewPost({title: '',content: ''});
+    }
 
     return  <Fragment>
               <Card style={{ height: '100%' }}>
                 <Card.Header as="h4">
-                  標題：<input name="title" type="text" placeholder="enter Title" onChange={handleOnChange}></input>
+                  標題：<input name="title" type="text" placeholder="enter Title" onChange={handleOnChange} value={newPost.title}></input>
                 </Card.Header>
                 <Card.Body>
                   <Card.Text>
-                    <input name="content" type="text" placeholder="enter Content" onChange={handleOnChange} className="w-100 mr-3" ></input>
+                    <input name="content" type="text" placeholder="enter Content" onChange={handleOnChange} value={newPost.content} className="w-100 mr-3" ></input>
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                  <Button onClick={() => props.handleInsert(newPost.title, newPost.content)}>發表</Button>
+                  <Button onClick={() => handleOnSubmit()} disabled={newPost.title === '' || newPost.content === ''}>發表</Button>
                 </Card.Footer>
               </Card>
             </Fragment>
