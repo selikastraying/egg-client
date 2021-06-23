@@ -10,7 +10,7 @@ function App() {
   const [posts, setPosts] = useState([])
   const fetchPost = () => {
     apiClient.get().then((res) => {
-      setPosts(res.data)
+      setPosts(res.data.reverse())
     })
   }
   const deletePost = (_id) => {
@@ -45,7 +45,7 @@ function App() {
           <Navbar.Brand href="#">留言板</Navbar.Brand>
         </Navbar>
         <div className="h-100 w-100">
-          <div className="bg overflow-auto noscrollbar h-75 py-3">
+          <div className="bg overflow-auto noscrollbar d-flex flex-column-reverse h-75 py-3">
             {
               posts.map((post) => 
                 <Post key={post._id}

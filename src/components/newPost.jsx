@@ -15,11 +15,11 @@ function NewPost(props) {
     return  <Fragment>
               <Card style={{ height: '100%' }}>
                 <Card.Header as="h4">
-                  標題：<input name="title" type="text" placeholder="enter Title" onChange={handleOnChange} value={newPost.title}></input>
+                  <input name="title" type="text" placeholder="enter Title" onChange={handleOnChange} value={newPost.title} className="rounded"></input>
                 </Card.Header>
                 <Card.Body>
                   <Card.Text>
-                    <input name="content" type="text" placeholder="enter Content" onChange={handleOnChange} value={newPost.content} className="w-100 mr-3" ></input>
+                    <input name="content" type="text" placeholder="enter Content" onChange={handleOnChange} value={newPost.content} className="rounded w-100 mr-3" ></input>
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer>

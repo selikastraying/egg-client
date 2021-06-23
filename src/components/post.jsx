@@ -14,11 +14,11 @@ function Post(props) {
             isUpdating?
               <Card>
                 <Card.Header as="h4">
-                  <input name="title" type="text" placeholder="enter Title" defaultValue={props.post.title} onChange={handleOnChange}></input>
+                  <input name="title" type="text" placeholder="enter Title" defaultValue={props.post.title} onChange={handleOnChange} className="rounded"></input>
                 </Card.Header>
                 <Card.Body>
                   <Card.Text>
-                    <input name="content" type="text" placeholder="enter Content" defaultValue={props.post.content} onChange={handleOnChange} className="w-100 mr-3"></input>
+                    <input name="content" type="text" placeholder="enter Content" defaultValue={props.post.content} onChange={handleOnChange} className="rounded w-100 mr-3"></input>
                   </Card.Text>
                   <Button className="mr-3" onClick={() => {props.handleUpdate(props.post._id, newPost.title, newPost.content);setIsUpdating(!isUpdating);}} disabled={newPost.title === '' || newPost.content === ''}>確定</Button>
                   <Button onClick={() => setIsUpdating(!isUpdating)}>取消</Button>
