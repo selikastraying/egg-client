@@ -40,12 +40,12 @@ function App() {
 
   return (
     <div className="App pt-5">
-        <Navbar fixed="top" bg="light" expand="lg">
+        <Navbar fixed="top" bg="light" expand="lg" style={{ boxShadow: '2px 0px 10px 0px black;' }}>
           <img src={logo} className="App-logo" alt="logo" />
           <Navbar.Brand href="#">留言板</Navbar.Brand>
         </Navbar>
         <div className="h-100 w-100">
-          <div className="bg overflow-auto noscrollbar d-flex flex-column-reverse h-75 py-3">
+          <div className="panel overflow-auto noscrollbar d-flex flex-column-reverse h-75 p-3">
             {
               posts.map((post) => 
                 <Post key={post._id}

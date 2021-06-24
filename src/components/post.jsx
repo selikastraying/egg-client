@@ -12,7 +12,7 @@ function Post(props) {
     return  <Fragment>
             {
             isUpdating?
-              <Card>
+              <Card style={{ marginTop: '1rem' }}>
                 <Card.Header as="h4">
                   <input name="title" type="text" placeholder="enter Title" defaultValue={props.post.title} onChange={handleOnChange} className="rounded"></input>
                 </Card.Header>
@@ -25,7 +25,7 @@ function Post(props) {
                 </Card.Body>
               </Card>
             :
-              <Card>
+              <Card style={{ marginTop: '1rem' }}>
                 <Card.Header as="h4">{props.post.title}</Card.Header>
                 <Card.Body>
                   <Card.Text>
